@@ -1,9 +1,9 @@
-﻿Shader "Unlit/Draw Stracks"
+﻿Shader "Unlit/DrawTracks"
 {
 	Properties
 	{
 		_MainTex ("Texture", 2D) = "white" {}
-		_Coordinate("Coordinate", Vector) = (0,0,0,0)
+		_Coordinates("Coordinate", Vector) = (0,0,0,0)
 		_Color("Draw Color", Color) = (1,0,0,0)
 
 	}
@@ -34,8 +34,8 @@
 
 			sampler2D _MainTex;
 			float4 _MainTex_ST;
-			fixed4 _Coordinate, _Color;
-			
+			fixed4 _Coordinates, _Color;
+
 			v2f vert (appdata v)
 			{
 				v2f o;
@@ -48,7 +48,9 @@
 			{
 				// sample the texture
 				fixed4 col = tex2D(_MainTex, i.uv);
-				return col;
+				float draw = pow (saturate(1- distance(i.uv, _Coordinates.xy)), 50); //brush size
+				fixed4 drawcol = _Color * (draw * 0.5); //strenght 
+				return saturate(col+drawcol);
 			}
 			ENDCG
 		}
