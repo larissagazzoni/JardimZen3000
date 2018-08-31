@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Sand Track
-  m_Shader: {fileID: 4800000, guid: 2d86a40c23c8ceb47ae764030f2f32da, type: 3}
+  m_Shader: {fileID: 4800000, guid: ce311df4cc232544c83a8fdf8890c128, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _GroundTex:
-        m_Texture: {fileID: 2800000, guid: a11d3825c6e76a840b464c19a61ed9d9, type: 3}
+        m_Texture: {fileID: 2800000, guid: fafa21b48d7922b40968917f8a31a54c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -27,7 +27,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SandTex:
-        m_Texture: {fileID: 2800000, guid: fafa21b48d7922b40968917f8a31a54c, type: 3}
+        m_Texture: {fileID: 2800000, guid: a11d3825c6e76a840b464c19a61ed9d9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Splat:
@@ -41,5 +41,5 @@ Material:
     - _Tess: 16.8
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _GroundColor: {r: 0.509434, g: 0.44983983, b: 0.28595588, a: 1}
-    - _SandColor: {r: 0.9245283, g: 0.82886213, b: 0.57254905, a: 1}
+    - _GroundColor: {r: 1, g: 0.9888282, b: 0.9575472, a: 1}
+    - _SandColor: {r: 1, g: 1, b: 1, a: 1}
