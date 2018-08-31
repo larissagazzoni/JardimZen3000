@@ -3,7 +3,7 @@
 	Properties
 	{
 		_MainTex ("Texture", 2D) = "white" {}
-		_Coordinates("Coordinate", Vector) = (0,0,0,0)
+		_Coordinate("Coordinate", Vector) = (0,0,0,0)
 		_Color("Draw Color", Color) = (1,0,0,0)
 
 	}
@@ -17,7 +17,7 @@
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
-			
+
 			#include "UnityCG.cginc"
 
 			struct appdata
@@ -34,7 +34,7 @@
 
 			sampler2D _MainTex;
 			float4 _MainTex_ST;
-			fixed4 _Coordinates, _Color;
+			fixed4 _Coordinate, _Color;
 
 			v2f vert (appdata v)
 			{
@@ -43,13 +43,13 @@
 				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 				return o;
 			}
-			
+
 			fixed4 frag (v2f i) : SV_Target
 			{
 				// sample the texture
 				fixed4 col = tex2D(_MainTex, i.uv);
-				float draw = pow (saturate(1- distance(i.uv, _Coordinates.xy)), 50); //brush size
-				fixed4 drawcol = _Color * (draw * 0.5); //strenght 
+				float draw = pow (saturate(1- distance(i.uv, _Coordinate.xy)), 50); //brush size
+				fixed4 drawcol = _Color * (draw * 0.5); //strenght
 				return saturate(col+drawcol);
 			}
 			ENDCG
